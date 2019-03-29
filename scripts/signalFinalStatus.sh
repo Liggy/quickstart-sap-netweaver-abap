@@ -59,11 +59,7 @@ MSG="$2"
 
 log `date` signalFinalStatus.sh
 
-if [ "${SIGNAL}" == "0" ]; then
-   /tmp/aws/bin/cfn-signal -e "$SIGNAL" -r "$MSG" "${WaitForSAPInstallWaitHandle}"
-else
-   /tmp/aws/bin/cfn-signal -e "$SIGNAL" -r "$MSG" "${WaitForSAPInstallWaitHandle}"
-fi
+/tmp/aws/bin/cfn-signal -e "$SIGNAL" -r "$MSG" "${WaitForSAPInstallWaitHandle}"
 
 log `date` END signalFinalStatus.sh
 
