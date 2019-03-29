@@ -71,6 +71,19 @@ then
     SRC_INI_DIR="/root/install"
     SAPINST="/sapmnt/SWPM/sapinst"
 
+elif [ "$INSTALL_SAP_VERSION" == "ECC6EHP8" ]
+then
+
+    ASCS_INI_FILE="/sapmnt/SWPM/NW75/ASCS_00_Linux_HDB.params"
+    PAS_INI_FILE="/sapmnt/SWPM/NW75/PASX_D00_Linux_HDB.params"
+    DB_INI_FILE="/sapmnt/SWPM/NW75/DB_00_Linux_HDB.params"
+    ASCS_PRODUCT="NW_ABAP_ASCS:BS2016.ERP608.HDB.HA"
+    DB_PRODUCT="NW_ABAP_DB:BS2016.ERP608.HDB.HA"
+    PAS_PRODUCT="NW_ABAP_CI:BS2016.ERP608.HDB.HA"
+    SW_TARGET="/sapmnt/SWPM/NW75"
+    SRC_INI_DIR="/root/install/NW75"
+    SAPINST="/sapmnt/SWPM/NW75/sapinst"
+
 else
 
     ASCS_INI_FILE="/sapmnt/SWPM/NW75/ASCS_00_Linux_HDB.params"
