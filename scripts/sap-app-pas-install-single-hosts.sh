@@ -992,7 +992,7 @@ else
           touch "$ASCS_DONE"
      else
           echo "DB not installed."
-          set_cleanup_inifiles
+          #set_cleanup_inifiles
           #/root/install/signalFinalStatus.sh 1 "SAP install RETRY Failed...DB not installed."
           DB_DONE_ERR=$(su - $SIDADM -c "R3trans -d" > /tmp/sap_r3trans.log 2>&1 )
           DB_DONE_LOG=$(cat /tmp/sap_r3trans.log )
@@ -1010,7 +1010,7 @@ then
     echo $_FILE
 
     echo "$ASCS_DONE file does not exist...exiting"
-    set_cleanup_inifiles
+    #set_cleanup_inifiles
     /root/install/signalFinalStatus.sh 1 "ASCS_DONE file $ASCS_DONE does not exist...exiting"
     exit 1
 fi
