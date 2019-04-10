@@ -22,7 +22,7 @@ DiagnosticsAgent.sapServiceDASIDPassword =
 HDB_Schema_Check_Dialogs.dropSchema = true
 
 # Name of the Database Schema.
-HDB_Schema_Check_Dialogs.schemaName = SAPABAP1
+HDB_Schema_Check_Dialogs.schemaName = SAPEVO
 
 # Password of the Database Schema.
 HDB_Schema_Check_Dialogs.schemaPassword = 
@@ -67,7 +67,7 @@ NW_CreateDBandLoad.movePVCforUsagePiAndDi =
 NW_GetMasterPassword.masterPwd = 
 
 # ABAP schema name
-NW_HDB_DB.abapSchemaName = SAPABAP1
+NW_HDB_DB.abapSchemaName = SAPEVO
 
 # Password of the ABAP schema user.
 NW_HDB_DB.abapSchemaPassword = 
