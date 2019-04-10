@@ -21,7 +21,7 @@ DiagnosticsAgent.sapServiceDASIDPassword =
 HDB_Schema_Check_Dialogs.dropSchema = false
 
 # Name of the Database Schema.
-HDB_Schema_Check_Dialogs.schemaName = SAPABAP1
+HDB_Schema_Check_Dialogs.schemaName = SAPEVO
 
 # Password of the Database Schema.
 HDB_Schema_Check_Dialogs.schemaPassword =  
