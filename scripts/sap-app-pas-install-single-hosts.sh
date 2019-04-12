@@ -87,14 +87,14 @@ then
 elif [ "$INSTALL_SAP_VERSION" == "S4H1809" ]
 then
 
-    ASCS_INI_FILE="/sapmnt/SWPM/NW75/ASCS_00_Linux_HDB.params"
-    PAS_INI_FILE="/sapmnt/SWPM/NW75/PASX_D00_Linux_HDB.params"
-    DB_INI_FILE="/sapmnt/SWPM/NW75/DB_00_Linux_HDB.params"
+    ASCS_INI_FILE="/sapmnt/SWPM/S4H1809/ASCS_00_Linux_HDB.params"
+    PAS_INI_FILE="/sapmnt/SWPM/S4H1809/PASX_D00_Linux_HDB.params"
+    DB_INI_FILE="/sapmnt/SWPM/S4H1809/DB_00_Linux_HDB.params"
     ASCS_PRODUCT="NW_ABAP_ASCS:S4HANA1809.CORE.HDB.ABAPHA"
     DB_PRODUCT="NW_ABAP_DB:S4HANA1809.CORE.HDB.ABAPHA"
     PAS_PRODUCT="NW_ABAP_CI:S4HANA1809.CORE.HDB.ABAPHA"
     SW_TARGET="/sapmnt/SWPM/S4H1809"
-    SRC_INI_DIR="/root/install/NW75"
+    SRC_INI_DIR="/root/install/S4H1809"
     SAPINST="/sapmnt/SWPM/S4H1809/sapinst"
 
 else
