@@ -93,9 +93,9 @@ then
     ASCS_PRODUCT="NW_ABAP_ASCS:S4HANA1809.CORE.HDB.ABAPHA"
     DB_PRODUCT="NW_ABAP_DB:S4HANA1809.CORE.HDB.ABAPHA"
     PAS_PRODUCT="NW_ABAP_CI:S4HANA1809.CORE.HDB.ABAPHA"
-    SW_TARGET="/sapmnt/SWPM/NW75"
+    SW_TARGET="/sapmnt/SWPM/S4H1809"
     SRC_INI_DIR="/root/install/NW75"
-    SAPINST="/sapmnt/SWPM/NW75/sapinst"
+    SAPINST="/sapmnt/SWPM/S4H1809/sapinst"
 
 else
 
@@ -200,6 +200,9 @@ set_dbinifile() {
      sed -i  "/SAPINST.CD.PACKAGE.RDBMS/ c\SAPINST.CD.PACKAGE.RDBMS = ${SW_TARGET}/HDB_CLNTCD" $DB_INI_FILE
      sed -i  "/SAPINST.CD.PACKAGE.LOAD/ c\SAPINST.CD.PACKAGE.LOAD = ${SW_TARGET}/EXP_CD" $DB_INI_FILE
 
+     #set the Download Basket location based on $SW_TARGET
+     sed -i  "/archives.downloadBasket/ c\archives.downloadBasket = ${SW_TARGET}/DOWNLOAD_BASKET" $DB_INI_FILE
+
 }
 
 set_ascsinifile() {
@@ -219,6 +222,9 @@ set_ascsinifile() {
      #set the CD location based on $SW_TARGET
      sed -i  "/SAPINST.CD.PACKAGE.KERNEL/ c\SAPINST.CD.PACKAGE.KERNEL = ${SW_TARGET}/KERN_CD" $ASCS_INI_FILE
      sed -i  "/SAPINST.CD.PACKAGE.RDBMS/ c\SAPINST.CD.PACKAGE.RDBMS = ${SW_TARGET}/HDB_CLNTCD" $ASCS_INI_FILE
+
+     #set the Download Basket location based on $SW_TARGET
+     sed -i  "/archives.downloadBasket/ c\archives.downloadBasket = ${SW_TARGET}/DOWNLOAD_BASKET" $DB_INI_FILE
 
 }
 
@@ -251,6 +257,9 @@ set_pasinifile() {
      sed -i  "/SAPINST.CD.PACKAGE.KERNEL/ c\SAPINST.CD.PACKAGE.KERNEL = ${SW_TARGET}/KERN_CD" $PAS_INI_FILE
      sed -i  "/SAPINST.CD.PACKAGE.RDBMS/ c\SAPINST.CD.PACKAGE.RDBMS = ${SW_TARGET}/HDB_CLNTCD" $PAS_INI_FILE
      sed -i  "/SAPINST.CD.PACKAGE.LOAD/ c\SAPINST.CD.PACKAGE.LOAD = ${SW_TARGET}/EXP_CD" $PAS_INI_FILE
+
+     #set the Download Basket location based on $SW_TARGET
+     sed -i  "/archives.downloadBasket/ c\archives.downloadBasket = ${SW_TARGET}/DOWNLOAD_BASKET" $DB_INI_FILE
 
 }
 
