@@ -94,7 +94,7 @@ then
     DB_PRODUCT="NW_ABAP_DB:S4HANA1809.CORE.HDB.ABAPHA"
     PAS_PRODUCT="NW_ABAP_CI:S4HANA1809.CORE.HDB.ABAPHA"
     SW_TARGET="/sapmnt/SWPM/S4H1809"
-    SRC_INI_DIR="/root/install/NW75"
+    SRC_INI_DIR="/root/install/S4H1809"
     SAPINST="/sapmnt/SWPM/S4H1809/sapinst"
 
 else
@@ -184,6 +184,7 @@ set_dbinifile() {
      sed -i  "/NW_GetMasterPassword.masterPwd/ c\NW_GetMasterPassword.masterPwd = ${MP}" $DB_INI_FILE
      sed -i  "/NW_HDB_DB.abapSchemaPassword/ c\NW_HDB_DB.abapSchemaPassword = ${MP}" $DB_INI_FILE
      sed -i  "/NW_HDB_getDBInfo.systemDbPassword/ c\NW_HDB_getDBInfo.systemDbPassword = ${MP}" $DB_INI_FILE
+     sed -i  "/NW_Recovery_Install_HDB.sidAdmPassword/ c\NW_Recovery_Install_HDB.sidAdmPassword = ${MP}" $DB_INI_FILE
 
      #set the SID and Schema
      sed -i  "/NW_HDB_getDBInfo.dbsid/ c\NW_HDB_getDBInfo.dbsid = ${SAP_SID}" $DB_INI_FILE
@@ -194,6 +195,7 @@ set_dbinifile() {
      #set the UID and GID
      sed -i  "/nwUsers.sidAdmUID/ c\nwUsers.sidAdmUID = ${SIDadmUID}" $DB_INI_FILE
      sed -i  "/nwUsers.sapsysGID/ c\nwUsers.sapsysGID = ${SAPsysGID}" $DB_INI_FILE
+     sed -i  "/NW_Recovery_Install_HDB.sidAdmName/ c\NW_Recovery_Install_HDB.sidAdmName = ${SIDADM}" $DB_INI_FILE
 
      #set the CD location based on $SW_TARGET
      sed -i  "/SAPINST.CD.PACKAGE.KERNEL/ c\SAPINST.CD.PACKAGE.KERNEL = ${SW_TARGET}/KERN_CD" $DB_INI_FILE
@@ -203,6 +205,8 @@ set_dbinifile() {
      #set the Download Basket location based on $SW_TARGET
      sed -i  "/archives.downloadBasket/ c\archives.downloadBasket = ${SW_TARGET}/DOWNLOAD_BASKET" $DB_INI_FILE
 
+	 #set the HANA backup files location
+	 sed -i  "/NW_Recovery_Install_HDB.extractLocation/ c\NW_Recovery_Install_HDB.extractLocation = /backup/data/${SID}" $DB_INI_FILE
 }
 
 set_ascsinifile() {
