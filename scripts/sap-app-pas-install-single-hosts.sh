@@ -206,7 +206,7 @@ set_dbinifile() {
      sed -i  "/archives.downloadBasket/ c\archives.downloadBasket = ${SW_TARGET}/DOWNLOAD_BASKET" $DB_INI_FILE
 
 	 #set the HANA backup files location
-	 sed -i  "/NW_Recovery_Install_HDB.extractLocation/ c\NW_Recovery_Install_HDB.extractLocation = /backup/data/${SID}" $DB_INI_FILE
+	 sed -i  "/NW_Recovery_Install_HDB.extractLocation/ c\NW_Recovery_Install_HDB.extractLocation = /backup/data/${SAP_SID}" $DB_INI_FILE
 }
 
 set_ascsinifile() {
