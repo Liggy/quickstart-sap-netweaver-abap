@@ -96,6 +96,8 @@ then
     SW_TARGET="/sapmnt/SWPM/S4H1809"
     SRC_INI_DIR="/root/install/S4H1809"
     SAPINST="/sapmnt/SWPM/S4H1809/sapinst"
+#Changing schema name is not allowed on S4HANA
+	SAP_SCHEMA_NAME="SAPHANADB"
 
 else
 
